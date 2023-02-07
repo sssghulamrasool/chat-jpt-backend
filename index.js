@@ -21,7 +21,7 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PATCH, DELETE");
   next();
 });
-app.post("/", async (req, res) => {
+app.post("/seach-content", async (req, res) => {
   try {
     // const completion = await openai.createCompletion({
     //   model: "text-davinci-002",
