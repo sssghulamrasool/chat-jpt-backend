@@ -8,8 +8,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 const configuration = new Configuration({
+  // organization: "org-aOtQ7UkXL1afbPRrk4LEwCEc",
+  // apiKey: "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",
   organization: "org-wEs6BSL4r4tPBMHGkxaQwSei",
-  apiKey: "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",
+  apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 app.use((req, res, next) => {
@@ -23,11 +25,6 @@ app.use((req, res, next) => {
 });
 app.post("/seach-content", async (req, res) => {
   try {
-    // const completion = await openai.createCompletion({
-    //   model: "text-davinci-002",
-    //   prompt: req.body.search,
-    // });
-
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: req.body.search,
