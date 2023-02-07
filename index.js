@@ -46,5 +46,18 @@ app.post("/", async (req, res) => {
     });
   }
 });
+app.get("/", (req, res) => {
+  try {
+    return res.status(500).json({
+      status: true,
+      message: "OK",
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: false,
+      error,
+    });
+  }
+});
 
 app.listen(8080, console.log("server is running 🤟🏻 "));
